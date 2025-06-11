@@ -53,7 +53,7 @@ This project highlights practical skills in **defensive cybersecurity**, **threa
 
 - **Request Type:** `GET`  
 - **URL:** `/products?category=electronics&item=laptop`  
-- **Expected Output:**  
+- **Expected Output:**  `"Request Clean! No immediate threats detected."` 
 
 ---
 
@@ -61,7 +61,7 @@ This project highlights practical skills in **defensive cybersecurity**, **threa
 
 - **Request Type:** `GET`  
 - **URL:** `/login?username=admin' OR 1=1--&password=foo`  
-- **Expected Output:**  
+- **Expected Output:**  `"THREAT DETECTED!" (Rule ID 1001 or 1010 will likely trigger)`
 
 ---
 
@@ -69,7 +69,7 @@ This project highlights practical skills in **defensive cybersecurity**, **threa
 
 - **Request Type:** `GET`  
 - **URL:** `/search?query=<script>alert('XSS');</script>`  
-- **Expected Output:**  
+- **Expected Output:**  `"THREAT DETECTED!" (Rule ID 1003 or 1009 will likely trigger)`
 
 ---
 
@@ -77,7 +77,7 @@ This project highlights practical skills in **defensive cybersecurity**, **threa
 
 - **Request Type:** `GET`  
 - **URL:** `/download?file=../../../../etc/passwd`  
-- **Expected Output:**  
+- **Expected Output:**  `"THREAT DETECTED!" (Rule ID 1005 or 1006 will likely trigger)`
 
 ---
 
