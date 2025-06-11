@@ -47,6 +47,79 @@ This project highlights practical skills in **defensive cybersecurity**, **threa
 
 ---
 
+## ✍️ Usage Examples
+
+### ✅ Clean Request
+
+- **Request Type:** `GET`  
+- **URL:** `/products?category=electronics&item=laptop`  
+- **Expected Output:**  
+
+---
+
+### ❌ SQL Injection
+
+- **Request Type:** `GET`  
+- **URL:** `/login?username=admin' OR 1=1--&password=foo`  
+- **Expected Output:**  
+
+---
+
+### ❌ XSS Attempt
+
+- **Request Type:** `GET`  
+- **URL:** `/search?query=<script>alert('XSS');</script>`  
+- **Expected Output:**  
+
+---
+
+### ❌ Path Traversal
+
+- **Request Type:** `GET`  
+- **URL:** `/download?file=../../../../etc/passwd`  
+- **Expected Output:**  
+
+---
+
+### ➕ Adding a Custom Rule
+
+1. Navigate to **Manage WAF Rules** in the UI.
+2. Click **Add New Rule**.
+3. Fill in the following details:
+ - **Rule ID:** `2001`
+ - **Name:** `Detect Malicious User Agent`
+ - **Pattern:** `evil-bot-agent`
+ - **Action:** `block`
+4. Click **Add Rule**.
+5. Test with a GET request like:  
+ `/info?user-agent=evil-bot-agent`
+
+---
+
+## 💡 Skills Demonstrated
+
+- **Web Security** – Understanding of WAF principles and common vulnerabilities (SQLi, XSS, etc.)
+- **Defensive Programming** – Implementing detection mechanisms
+- **Regex Mastery** – Using regular expressions for pattern matching
+- **Python** – Modular, object-oriented programming
+- **UI Design** – Creating intuitive UIs with Streamlit
+- **Automation** – Simulating and inspecting HTTP request flows
+- **Problem Solving** – Addressing real-world security issues
+
+---
+
+## 📈 Future Enhancements
+
+- 🔄 **Real Server Integration:** Use with Flask or FastAPI  
+- 📊 **Advanced Rules:** Add rule scoring and anomaly detection  
+- 📥 **Inspect Headers/JSON:** Expand rule coverage  
+- 💾 **Rule Persistence:** Save/load rules from JSON/YAML  
+- 📜 **Detailed Logs:** Track clean and blocked requests  
+- 📉 **Visualization:** Charts for rule hits and attack types  
+- 🤖 **ML Integration:** Detect threats using AI/ML
+
+---
+
 ## 📦 Getting Started
 
 ### Prerequisites
